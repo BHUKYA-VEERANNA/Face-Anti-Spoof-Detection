@@ -77,7 +77,7 @@ def main(model_dir, device_id, target_width, target_height):
     cap.set(cv2.CAP_PROP_FRAME_WIDTH, target_width)
     cap.set(cv2.CAP_PROP_FRAME_HEIGHT, target_height)
 
-    window_name = "Frame"
+    window_name = "Anti Spoof Face Recognition"
     cv2.namedWindow(window_name, cv2.WINDOW_NORMAL)
     cv2.resizeWindow(window_name, target_width, target_height)
     
@@ -112,7 +112,8 @@ if __name__ == "__main__":
     desc = "Real-time face anti-spoofing detection"
     parser = argparse.ArgumentParser(description=desc)
     parser.add_argument("--device_id", type=int, default=0, help="which GPU id, [0/1/2/3]")
-    parser.add_argument("--model_dir", type=str, default="C:/Users/bveer/Dropbox/4-2 B.Tech/Major Project/Code/Python_GUI/resources/anti_spoof_models", help="model library used to test")
+    # parser.add_argument("--model_dir", type=str, default="C:/Users/bveer/Dropbox/4-2 B.Tech/Major Project/Code/Python_GUI/resources/anti_spoof_models", help="model library used to test")
+    parser.add_argument("--model_dir", type=str, default="resources/anti_spoof_models",help="model library used to test")
     parser.add_argument("--target_width", type=int, default=640, help="target width for resizing the frame")
     parser.add_argument("--target_height", type=int, default=480, help="target height for resizing the frame")
     args = parser.parse_args()
